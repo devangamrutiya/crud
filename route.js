@@ -1,5 +1,6 @@
 var express = require('express');
 const stud = require('./Model/stud');
+const photo = require('./Model/photo');
 var router = express.Router();
 
 
@@ -10,7 +11,7 @@ router.get('/stud',async(req,res)=>{
 })
 
 router.get('/photo',async(req,res)=>{
-    var iphoto = await stud.find();
+    var iphoto = await photo.find();
     res.send(iphoto);
     res.sendFile("index.html",{root:__dirname});
 })
